@@ -13,10 +13,10 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg" {
   name     = "nextjs-hello-world-rg"
-  location = "US West 2"
+  location = "westus2"
 }
 
-resource "azurerm_static_site" "web" {
+resource "azurerm_static_web_app" "web_app" {
   name                = "nextjs-hello-world"
   resource_group_name = azurerm_resource_group.rg.name
   location           = azurerm_resource_group.rg.location
