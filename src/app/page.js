@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -19,10 +20,13 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
-
         <div className={styles.ctas}>
+          <a className={styles.primary} 
+              href="/dashboard">
+            Go to Dashboard
+          </a>
           <a
-            className={styles.primary}
+            className={styles.secondary}
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
