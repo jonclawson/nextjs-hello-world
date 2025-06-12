@@ -1,7 +1,14 @@
+import fetch from 'node-fetch';
+
 export async function GET() {
-  return Response.json([
-    { id: 1, name: 'John Doe' },
-    { id: 2, name: 'Jane Smith' },
-    { id: 3, name: 'Bob Johnson' }
-  ])
+  let users = await fetch('https://raw.githubusercontent.com/jonclawson/nextjs-hello-world/refs/heads/main/public/users.json')
+    .then(response => response.json())
+    .then(data => {
+      users = data
+      console.log(data);
+    })
+    .catch(error => {
+      console.error('Error fetching users:', error);
+    });
+  return Response.json(users)
 }
