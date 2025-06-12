@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-import Chat from './chat'
+// import Chat from './chat'
 export default function Dashboard() {
   const [users, setUsers] = useState([])
 
@@ -13,7 +13,7 @@ export default function Dashboard() {
   return (
     <div>
       <h1>Dashboard</h1>
-      <Chat />
+      {/* <Chat /> */}
       <ul>
         {users.map(user => (
           <li key={user.id}>{user.name}</li>
